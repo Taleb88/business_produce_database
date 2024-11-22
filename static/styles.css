@@ -1,6 +1,5 @@
 body {
     max-width: 500px;
-    margin: auto;
 }
 
 h1 {
@@ -13,7 +12,7 @@ table {
 
 table, td, th {
     border: solid black;
-    width: 150%;
+    width: 210%;
     border-collapse: collapse;
 }
 
@@ -23,14 +22,12 @@ th {
     font-size: 100%;
 }
 
+th:nth-child(2) {
+    font-size: 100%;
+}
+
 td {
     font-weight: bold;
     font-style: italic;
     font-size: 100%;
 }
-
-/* td {
-    border-left: solid blue;
-    border-right: solid blue;
-    border: solid blue;
-} */
