@@ -21,11 +21,10 @@
 
             <h1>Business Produce Database</h1>
 
-            <button type="button" onclick="tableToCSV()" id="excelButton">Download to Excel</button>
-            <br>
             <input type="text" id="userInput" value="{{ search_query }}" onkeyup="produceSearch()"
                    placeholder="Search for produce" title="Type in a produce"
                    onfocus="cursorToTheRight(this)" autofocus>
+            <button type="button" onclick="tableToCSV()" id="excelButton">Download to Excel</button>
             <table id="myTable">
                 <thead>
                     <tr>
