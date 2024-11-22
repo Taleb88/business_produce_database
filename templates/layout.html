@@ -62,12 +62,12 @@
 
             <span>Page {{ page }} of {{ total_pages }}</span>
 
-            {% if page > 1 %}
-                <a href="{{ url_for('layout', search=search_query, page=1) }}">Beginning</a>
-            {% endif %}
-
             {% if page < total_pages %}
                 <a href="{{ url_for('layout', search=search_query, page=page+1) }}">Next</a>
+            {% endif %}
+            <br>
+            {% if page > 1 %}
+                <a href="{{ url_for('layout', search=search_query, page=1) }}">Beginning</a>
             {% endif %}
         </div>
         <a href="{{ url_for('layout', search=search_query, page=total_pages) }}">Last</a>
