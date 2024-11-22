@@ -84,15 +84,28 @@ function myFunction() {
 */
 
 // product search bar
-function productSearch() {
+function produceSearch() {
     const search = document.getElementById('userInput').value.trim();
     const baseURL = window.location.origin + "/layout";
     window.location.href = `${baseURL}?search=${encodeURIComponent(search)}&page=1`;
 }
 
+// cursor stays to the right while user types query into search box
 function cursorToTheRight(x) {
     let value = x.value // get input value
     x.value = ' '; // value is temporarily cleared
     x.value = value + "" // restore value to move cursor to the right
     setTimeout("cursorToTheRight()", 200) // prevent lagging, allow page to load faster via user input
+}
+
+// Function to check Whether both passwords
+// is same or not.
+function checkPassword(form) {
+	password1 = form.password1.value;
+	password2 = form.password2.value;
+
+	if (password1 != password2) {
+		alert("\nPasswords do not match, please try again.")
+		return false;
+	}
 }

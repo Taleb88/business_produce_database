@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask User Authentication</title>
+    <!-- css styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <!-- js scripts -->
+    <script src="{{url_for('static', filename='myscripts.js')}}"></script>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body>
+    <header>
+        <h1>Business Produce</h1>
+    </header>
+    <section>
+        {% block content %}
+            <p>Welcome, {{ username }}</p>
+
+            <h1>All Data is Confidential</h1>
+
+            <button type="button" onclick="tableToCSV()">Download to Excel</button>
+            <br>
+            <input type="text" id="userInput" value="{{ search_query }}" onkeyup="produceSearch()"
+                   placeholder="Search for produce" title="Type in a produce"
+                   onfocus="cursorToTheRight(this)" autofocus>
+            <table id="myTable">
+                <thead>
+                    <tr>
+                        <th>Produce</th>
+                        <th>Price</th>
+                        <th>Currency</th>
+                        <th>Imported From</th>
+                        <th>Country Code</th>
+                        <th>Import Date</th>
+                        <th>Time of Import</th>
+                        <th>In Stock</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for x in data %}
+                    <tr>
+                        <td>{{ x.Product }}</td>
+                        <td>{{ x.Price }}</td>
+                        <td>{{ x.Currency }}</td>
+                        <td>{{ x.Imported_From }}</td>
+                        <td>{{ x.Country_Code }}</td>
+                        <td>{{ x.Import_Date }}</td>
+                        <td>{{ x.Time_of_Import }}</td>
+                        <td>{{ x.In_Stock }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+
+        <div class="pagination">
+            {% if page > 1 %}
+                <a href="{{ url_for('layout', search=search_query, page=page-1) }}">Previous</a>
+            {% endif %}
+
+            <span>Page {{ page }} of {{ total_pages }}</span>
+
+            {% if page < total_pages %}
+                <a href="{{ url_for('layout', search=search_query, page=page+1) }}">Next</a>
+            {% endif %}
+        </div>
+        <a href="{{ url_for('layout', search=search_query, page=total_pages) }}">Last</a>
+        <br>
+        <div>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
+    </section>
+    <br><br>
+    <footer>
+        <b>This an internal business site ONLY</b>
+    </footer>
+    <br>
+    {% endblock %}
+</body>
+</html>
