@@ -89,7 +89,7 @@ def login():
 @login_required
 def layout():
     # number of results/items per page
-    items_per_page = 10
+    items_per_page = 20
 
     # get current page number from query parameters, set default to = 1
     page = int(request.args.get('page', 1))
