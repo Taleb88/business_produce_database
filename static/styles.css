@@ -1,0 +1,36 @@
+body {
+    max-width: 500px;
+    margin: auto;
+}
+
+h1 {
+    font-family: system-ui;
+}
+
+table {
+    background-color: #FFFAF0;
+}
+
+table, td, th {
+    border: solid black;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: #A52A2A;
+    font-family: sans-serif;
+    font-size: 150%;
+}
+
+td {
+    font-weight: bold;
+    font-style: italic;
+    font-size: 110%;
+}
+
+/* td {
+    border-left: solid blue;
+    border-right: solid blue;
+    border: solid blue;
+} */
