@@ -85,7 +85,7 @@ table {
 }
 
 table, td, th {
-    border: solid black;
+    border: thin black;
     width: 110em;
     border-collapse: collapse;
     margin-left: auto;
