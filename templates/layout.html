@@ -27,6 +27,9 @@
             <button type="button" onclick="tableToCSV()" id="excelButton"
                     onmouseover="mouseOverExcelButton()" onmouseout="mouseOutExcelButton()">Download to Excel
             </button>
+
+            <a href="{{ url_for('logout') }}">Logout</a>
+
             <br><br>
             <div class="pagination">
                 {% if page > 1 %}
@@ -73,16 +76,10 @@
                     {% endfor %}
                 </tbody>
             </table>
-
-        <a href="{{ url_for('layout', search=search_query, page=total_pages) }}">Last</a>
-        <br>
-        <div>
-            <a href="{{ url_for('logout') }}">Logout</a>
-        </div>
     </section>
-    <br><br>
+    <br>
     <footer>
-        <b>This an internal business site only</b>
+        <b>This is an internal business site only</b>
     </footer>
     <br>
     {% endblock %}
