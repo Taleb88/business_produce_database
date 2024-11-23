@@ -1,0 +1,53 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    margin-left: 42.5%;
+}
+
+h2 {
+    font-size: 2.3em;
+    font-family: system-ui;
+}
+
+form, input {
+    font-family: system-ui;
+}
+
+input {
+    font-size: 1.2em;
+    margin-top: 0.1em;
+}
+
+button {
+    color: #FFFFFF;
+    background-color: #228B22;
+    border: black;
+    border-radius: 50px;
+    margin-top: 0.3em;
+    height: 1.90em;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #5F9EA0;
+    font-weight: 100%;
+}
+
+button:active {
+    transform: scale(0.9);
+}
+
+#signIntoExistingAccount {
+    text-decoration: none;
+    font-family: system-ui;
+}
+
+#signIntoExistingAccount:hover {
+    color: red;
+}
+
+#loginLink {
+    margin-top: 0.2em;
+}

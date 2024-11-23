@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <!-- css styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='register_styles.css') }}">
     <!-- favicon -->
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 </head>
@@ -21,19 +23,24 @@
         {% endif %}
       {% endwith %}
       <form method="post" onSubmit="return checkPassword(this)" action="{{ url_for('user_account_registration') }}">
-        <label for="username">Username (must be at least 5 characters):</label>
+        <label for="username">Username (must be at least 5 characters)</label>
+          <br>
         <input type="text" name="username" pattern=".{5,}" required>
           <br>
-        <label for="password">Password (must be at least 5 characters):</label>
+        <label for="password">Password (must be at least 5 characters)</label>
+          <br>
         <input type="password" name="password1" pattern=".{5,}" required>
           <br>
-        <label for="password2">Please confirm your password:</label>
+        <label for="password2">Please confirm your password</label>
+          <br>
         <input type="password" name="password2" required>
           <br>
         <button type="submit">Register</button>
+          <br>
       </form>
-
-      <a href="{{ url_for('login') }}">Sign Into Existing Account</a>
+      <div id="loginLink">
+          <a href="{{ url_for('login') }}" id="signIntoExistingAccount">Sign Into Existing Account</a>
+      </div>
     {% endblock %}
 </body>
 </html>
