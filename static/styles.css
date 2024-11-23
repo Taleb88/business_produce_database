@@ -61,6 +61,10 @@ body {
     background-color: #228B22;
 }
 
+#firstPage:hover, #pageBack:hover, #pageForward:hover, #lastPage:hover {
+    background-color: #000000;
+}
+
 #pageNumber {
     font-weight: bold;
     margin-left: 0.3em;
