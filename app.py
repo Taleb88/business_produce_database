@@ -92,10 +92,10 @@ def layout():
     items_per_page = 25
 
     # get current page number from query parameters, set default to = 1
-    page = int(request.args.get('page', 1))
+    page = max(int(request.args.get('page', 1)), 1) # make sure page is at least 1
 
     # skip items
-    skip_items = (page - 1) * items_per_page
+    skip_items = max((page - 1) * items_per_page, 0) # make sure skip items are non-negative
 
     # search query as the default result is empty to start with (pagination)
     search_query = request.args.get('search', '').strip()
@@ -115,6 +115,7 @@ def layout():
                 {"In Stock": {"$regex": search_query, "$options": "i"}}
             ]
         }
+
 
     # grab data from mongodb - business database, specifically the product and list in asc order
     data = list(collection2.find(query).sort("Product", 1).skip(skip_items).limit(items_per_page))
