@@ -17,7 +17,7 @@
     </header> -->
     <section>
         {% block content %}
-            <p>Welcome, {{ username }}!</p>
+            <p>Welcome, {{ username }}! <a href="{{ url_for('logout') }}" id="logout">Logout</a></p>
 
             <h1>Business Produce Database</h1>
 
@@ -27,26 +27,24 @@
             <button type="button" onclick="tableToCSV()" id="excelButton"
                     onmouseover="mouseOverExcelButton()" onmouseout="mouseOutExcelButton()">Download to Excel
             </button>
-
-            <a href="{{ url_for('logout') }}">Logout</a>
-
-            <br><br>
             <div class="pagination">
+
                 {% if page > 1 %}
-                    <a href="{{ url_for('layout', search=search_query, page=page-1) }}">Previous</a>
+                    <a href="{{ url_for('layout', search=search_query, page=1) }}" id="firstPage"> << </a>
                 {% endif %}
 
-                <span>Page {{ page }} of {{ total_pages }}</span>
+                {% if page > 1 %}
+                    <a href="{{ url_for('layout', search=search_query, page=page-1) }}" id="pageBack"> < </a>
+                {% endif %}
+
+                <span id="pageNumber">{{ page }} of {{ total_pages }}</span>
 
                 {% if page < total_pages %}
-                    <a href="{{ url_for('layout', search=search_query, page=page+1) }}">Next</a>
-                {% endif %}
-                <br>
-                {% if page > 1 %}
-                    <a href="{{ url_for('layout', search=search_query, page=1) }}">Beginning</a>
+                    <a href="{{ url_for('layout', search=search_query, page=page+1) }}" id="pageForward"> > </a>
                 {% endif %}
 
-                <a href="{{ url_for('layout', search=search_query, page=total_pages) }}">Last</a>
+                <a href="{{ url_for('layout', search=search_query, page=total_pages) }}" id="lastPage"> >> </a>
+                <br> <br>
             </div>
             <table>
                 <thead>

@@ -2,6 +2,11 @@ body {
     background-color: #F8F8FF;
 }
 
+#logout {
+    color: red;
+    text-decoration: none;
+}
+
 #userInput {
     color: blue;
     font-weight: bold;
@@ -20,11 +25,27 @@ body {
 }
 
 #excelButton:hover {
-    font-weight: 1000%;
+    font-weight: 100%;
 }
 
 #excelButton:active {
     transform: scale(0.9);
+}
+
+#firstPage, #pageBack, #pageForward, #lastPage {
+    text-decoration: none;
+    font-size: 1.5em;
+    margin-left: 0.2em;
+    font-weight: bold;
+    border: solid black;
+    border-radius: 10px;
+    color: #FFFFFF;
+    background-color: #228B22;
+}
+
+#pageNumber {
+    font-weight: bold;
+    margin-left: 0.3em;
 }
 
 p {
