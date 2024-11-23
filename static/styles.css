@@ -3,9 +3,20 @@ body {
 }
 
 #logout {
-    color: red;
+    color: #FFFFFF;
+    background-color: #228B22;
     text-decoration: none;
+    border: solid black;
+    font-weight: bold;
+    padding: 0.1em;
+    border-radius: 0.8em;
+    margin-left: 1em;
 }
+
+#excelButton:active {
+    transform: scale(0.9);
+}
+
 
 #userInput {
     color: blue;
