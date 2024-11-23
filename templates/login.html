@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <!-- css styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='login_styles.css') }}">
     <!-- favicon -->
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 </head>
@@ -22,14 +24,17 @@
       {% endwith %}
       <form method="post" action="{{ url_for('login') }}">
         <label for="username">Username:</label>
+          <br>
         <input type="text" name="username" required>
           <br>
-        <label for="password">Password:</label>
+        <label for="password" id="password">Password:</label>
+          <br>
         <input type="password" name="password1" required>
           <br>
         <button type="submit">Login</button>
       </form>
     <a href="{{ url_for('user_account_registration') }}">Create an Account</a>
+
     {% endblock %}
 </body>
 </html>
