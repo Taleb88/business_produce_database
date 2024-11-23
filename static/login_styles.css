@@ -21,5 +21,29 @@ input {
 }
 
 button {
+    color: #FFFFFF;
+    background-color: #228B22;
+    border: black;
+    border-radius: 50px;
+    margin-top: 0.3em;
+    height: 1.90em;
+    font-weight: bold;
+}
 
+button:hover {
+    background-color: #5F9EA0;
+    font-weight: 100%;
+}
+
+button:active {
+    transform: scale(0.9);
+}
+
+#createAnAccount {
+    text-decoration: none;
+    font-family: system-ui;
+}
+
+#createAnAccount:hover {
+    color: red;
 }
