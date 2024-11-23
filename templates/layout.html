@@ -24,9 +24,11 @@
             <input type="text" id="userInput" value="{{ search_query }}" onkeyup="produceSearch()"
                    placeholder="Search for produce" title="Type in a produce"
                    onfocus="cursorToTheRight(this)" autofocus>
-            <button type="button" onclick="tableToCSV()" id="excelButton">Download to Excel</button>
+            <button type="button" onclick="tableToCSV()" id="excelButton"
+                    onmouseover="mouseOverExcelButton()" onmouseout="mouseOutExcelButton()">Download to Excel
+            </button>
             <br><br>
-            <table id="myTable">
+            <table>
                 <thead>
                     <tr>
                         <th>Produce</th>

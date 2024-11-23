@@ -109,3 +109,11 @@ function checkPassword(form) {
 		return false;
 	}
 }
+
+function mouseOverExcelButton() {
+  document.getElementById("excelButton").style.color = "yellow";
+}
+
+function mouseOutExcelButton() {
+  document.getElementById("excelButton").style.color = "white";
+}
