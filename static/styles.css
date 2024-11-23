@@ -13,16 +13,23 @@ body {
     margin-left: 1em;
 }
 
+#logout:hover {
+    background-color: #DC143C;
+}
+
 #excelButton:active {
     transform: scale(0.9);
 }
-
 
 #userInput {
     color: blue;
     font-weight: bold;
     border: solid black;
     height: 2em;
+}
+
+#userInput:hover {
+    background-color: #FFF8DC;
 }
 
 #excelButton {
